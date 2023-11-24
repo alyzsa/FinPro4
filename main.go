@@ -1,12 +1,13 @@
 package main
 
 import (
-	"github.com/alyzsa/FinPro4/database"
-	"github.com/alyzsa/FinPro4/entity"
-	"github.com/alyzsa/FinPro4/router"
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/alyzsa/FinPro4/database"
+	"github.com/alyzsa/FinPro4/entity"
+	"github.com/alyzsa/FinPro4/router"
 
 	"gorm.io/gorm"
 )
@@ -20,7 +21,7 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	r.Run(":8080")
+	r.Run(":" + port)
 }
 
 func seedAdminData(db *gorm.DB) {
