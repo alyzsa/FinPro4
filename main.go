@@ -6,7 +6,6 @@ import (
 	"github.com/alyzsa/FinPro4/router"
 	"fmt"
 	"log"
-	"os"
 
 	"gorm.io/gorm"
 )
@@ -16,10 +15,6 @@ func main() {
 	var db = database.GetDB()
 	seedAdminData(db)
 	r := router.StartApp()
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
 	r.Run(":8080")
 }
 
